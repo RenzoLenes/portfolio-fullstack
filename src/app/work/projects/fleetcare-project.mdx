@@ -1,0 +1,51 @@
+---
+title: "FleetCare – Supervisión Inteligente de Flotas en Tiempo Real"
+publishedAt: "2025-06-08"
+summary: "Aplicación web con IoT, Supabase y OpenAI que monitorea el estado técnico de flotas en tiempo real y genera recomendaciones automatizadas. Notificaciones vía WhatsApp con Twilio."
+images:
+  - "/images/projects/fleetcare/img11.png"
+  - "/images/projects/fleetcare/img21.png"
+  - "/images/projects/fleetcare/img31.png"
+
+team:
+  - name: "Renzo Lenes"
+    role: "Fullstack Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/renzo-alberto-lenes/"
+
+link: "https://fleet-care-migration.vercel.app/"
+
+---
+
+## Overview
+
+FleetCare es una plataforma inteligente que supervisa en tiempo real el estado técnico de flotas de buses, utilizando dispositivos IoT conectados, análisis de datos con OpenAI y notificaciones automatizadas. El objetivo es maximizar la seguridad, eficiencia operativa y prevenir fallos mediante monitoreo, análisis predictivo y alertas en tiempo real.
+
+## Key Features
+
+- **Autenticación con Clerk + OAuth de Google**: Gestión de usuarios segura e intuitiva, facilitando el acceso con cuentas Google.
+- **Monitoreo IoT en Tiempo Real**: Sensores en los vehículos transmiten datos técnicos (temperatura, presión, combustible, etc.) a Supabase, que actúa como base de datos en tiempo real.
+- **Orquestación con n8n**: Automatización de flujos entre Supabase, OpenAI y Twilio para análisis y respuesta automática.
+- **Análisis con OpenAI**: Los datos técnicos son enviados a una API de OpenAI que genera un análisis contextualizado del estado del vehículo, sugiriendo posibles acciones.
+- **Alertas Críticas vía WhatsApp**: Si el análisis detecta un estado crítico, se envía una alerta automatizada al conductor mediante la API de Twilio.
+- **Centro de Comando Web**: Aplicación Next.js donde los operadores pueden visualizar estadísticas, recibir alertas, analizar recomendaciones y gestionar la flota.
+
+## Technologies Used
+
+- **Next.js + Tailwind CSS**: Desarrollo de una interfaz moderna, responsive y rápida.
+- **Clerk**: Autenticación con OAuth (Google), manejo de sesiones y protección de rutas.
+- **Supabase**: Base de datos Postgres con capacidades en tiempo real, usada como backend y canal de sincronización de datos IoT.
+- **n8n**: Orquestador de flujos que conecta Supabase con OpenAI y Twilio para automatización.
+- **OpenAI API**: Procesamiento de estadísticas para generar insights técnicos y recomendaciones automáticas.
+- **Twilio API**: Envío de mensajes WhatsApp directamente al conductor en caso de alertas técnicas.
+- **WebSockets**: Comunicación en tiempo real entre el frontend y Supabase para visualización instantánea.
+
+## Challenges and Learnings
+
+Uno de los mayores desafíos fue mantener una arquitectura reactiva y modular sin comprometer la velocidad. Supabase permitió manejar eventos en tiempo real, mientras que n8n facilitó una lógica desacoplada y escalable para la orquestación de acciones entre servicios.
+
+El uso de OpenAI trajo el reto de transformar datos técnicos en lenguaje natural útil, lo que se resolvió con *prompt engineering* especializado por tipo de falla y contexto mecánico. Asimismo, la integración con Twilio permitió cerrar el flujo de comunicación efectiva con el conductor.
+
+## Outcome
+
+FleetCare logró crear un sistema autónomo de supervisión y análisis, capaz de reducir riesgos y tiempos de respuesta ante fallos mecánicos. La plataforma ya se está probando en entornos reales con resultados positivos en reducción de fallas no previstas y una mejor toma de decisiones operativas. Con la capacidad de escalar a cientos de buses, FleetCare representa una solución moderna e inteligente para el transporte seguro.

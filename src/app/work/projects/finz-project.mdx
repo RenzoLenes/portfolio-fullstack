@@ -1,0 +1,53 @@
+---
+title: "FINZ – Control de Finanzas Personales"
+publishedAt: "2025-06-14"
+summary: "Aplicación de finanzas personales que permite registrar ingresos y gastos, con autenticación segura y base de datos en la nube. Diseñada con una arquitectura moderna y minimalista."
+images:
+  - "/images/projects/finz/img11.png"
+  - "/images/projects/finz/img21.png"
+  - "/images/projects/finz/img31.png"
+
+
+team:
+  - name: "Renzo Lenes"
+    role: "Fullstack Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/renzo-alberto-lenes/"
+
+link: "https://saas-expenses.vercel.app/"
+---
+
+## Overview
+
+**FINZ** es una aplicación moderna que permite a los usuarios gestionar sus finanzas personales de forma simple e intuitiva. Los usuarios pueden registrar ingresos y gastos, visualizar su balance mensual y tener control total de su economía desde cualquier dispositivo.
+
+Construida con Next.js y Tailwind, FINZ ofrece una experiencia fluida, rápida y adaptable. La autenticación se maneja con Clerk y los datos se almacenan en **Neon**, utilizando **Drizzle ORM** como capa de acceso a la base de datos.
+
+## Key Features
+
+- **Autenticación con Clerk**: Registro y login con OAuth (Google), manejo de sesiones seguro y protección de rutas.
+- **Gestión de Finanzas**: Registro de ingresos y gastos categorizados, con visualización de resumen mensual y balance actualizado.
+- **Diseño Minimalista**: Interfaz moderna construida con Tailwind CSS, adaptable a cualquier dispositivo.
+- **Arquitectura Moderna**: Backend ligero con Drizzle ORM sobre Neon, permitiendo escalabilidad y consultas optimizadas.
+- **Experiencia UX centrada en el usuario**: Animaciones suaves, inputs intuitivos y carga instantánea gracias a Next.js y caching inteligente.
+
+## Technologies Used
+
+- **Next.js**: Para construir una aplicación reactiva, SSR y altamente optimizada.
+- **Tailwind CSS**: Para un diseño limpio, moderno y personalizable.
+- **Clerk**: Gestión de autenticación, sesiones y usuarios con integración OAuth (Google).
+- **Drizzle ORM**: ORM typesafe y liviano para interacción con bases de datos PostgreSQL.
+- **Neon**: Base de datos en la nube, escalable y serverless.
+- **Vercel**: Despliegue continuo y hosting de la aplicación.
+
+## Challenges and Learnings
+
+Un reto importante fue mantener el rendimiento mientras se procesaban múltiples operaciones financieras por usuario, sin sacrificar la experiencia visual. Drizzle permitió consultas eficientes y typesafe, mientras Clerk facilitó la implementación segura de autenticación sin complejidad adicional.
+
+Además, diseñar una experiencia que motivara a los usuarios a registrar sus movimientos diarios sin fricción llevó a un diseño centrado en la velocidad, simplicidad y enfoque visual.
+
+## Outcome
+
+FINZ ha sido bien recibido por usuarios en etapa de prueba, quienes destacan su facilidad de uso y la claridad en los reportes financieros. Es una base sólida para seguir creciendo con nuevas funcionalidades como presupuestos y metas de ahorro.
+
+Este proyecto muestra una combinación equilibrada entre tecnología moderna y experiencia de usuario, con un stack sólido que puede escalar fácilmente a producción.
