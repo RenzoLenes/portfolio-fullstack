@@ -1,6 +1,7 @@
 {
-  "name": "@once-ui-system/magic-portfolio",
-  "version": "2.2.0",
+  "name": "renzo-lenes-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio personal de Renzo Lenes — Semi-Senior Full-Stack Developer",
   "scripts": {
     "dev": "next dev",
     "export": "next export",

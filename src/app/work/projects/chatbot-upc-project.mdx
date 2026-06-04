@@ -1,0 +1,50 @@
+---
+title: "Chatbot UPC – Atención al Estudiante con IA (RAG)"
+publishedAt: "2026-01-20"
+summary: "Asistente conversacional RAG para atención al estudiante en procesos de matrícula, integrado con WhatsApp. Backend FastAPI con LangChain y OpenAI, panel administrativo en Next.js y búsqueda vectorial con pgvector."
+images:
+  - "/images/projects/chatbot-upc/dashboard.png"
+  - "/images/projects/chatbot-upc/conversations.png"
+  - "/images/projects/chatbot-upc/reports.png"
+  - "/images/projects/chatbot-upc/intents.png"
+
+team:
+  - name: "Renzo Lenes"
+    role: "AI Engineer · Fullstack Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/renzo-alberto-lenes/"
+---
+
+## Overview
+
+**Chatbot UPC** es un asistente conversacional con arquitectura **RAG (Retrieval-Augmented Generation)** diseñado para resolver consultas de estudiantes durante el proceso de matrícula universitaria. Los estudiantes interactúan vía **WhatsApp** (Meta Cloud API) y reciben respuestas contextuales y precisas basadas en la documentación oficial de la institución.
+
+El sistema incluye un **panel administrativo (CRM)** en Next.js desde donde los operadores gestionan conversaciones, documentos de la base de conocimiento, intenciones y reportes de uso en tiempo real.
+
+## Key Features
+
+- **RAG sobre documentación institucional**: Recuperación semántica con embeddings y `pgvector` para fundamentar cada respuesta en información oficial, reduciendo alucinaciones.
+- **Integración con WhatsApp**: Canal conversacional real mediante la Meta Cloud API, con manejo de sesiones y contexto por estudiante.
+- **Panel administrativo (CRM)**: Gestión de conversaciones, carga de documentos, definición de intenciones y dashboards de métricas.
+- **Procesamiento asíncrono**: Tareas en background con Celery y Redis para indexación de documentos y operaciones costosas sin bloquear la respuesta.
+- **Detección de intenciones**: Clasificación de consultas para enrutar y responder con mayor precisión.
+
+## Technologies Used
+
+- **FastAPI**: Backend de alto rendimiento que orquesta el pipeline RAG.
+- **LangChain + OpenAI (gpt-4o-mini)**: Orquestación de la recuperación y generación de respuestas.
+- **PostgreSQL 16 + pgvector**: Almacenamiento de embeddings y búsqueda vectorial.
+- **Celery + Redis**: Procesamiento asíncrono e indexación de la base de conocimiento.
+- **Next.js 16 + React 19 + Tailwind v4**: Panel administrativo (CRM).
+- **Meta Cloud API (WhatsApp)**: Canal de mensajería con los estudiantes.
+- **Docker Compose**: Orquestación de servicios para desarrollo y despliegue.
+
+## Challenges and Learnings
+
+El principal desafío fue lograr respuestas precisas y confiables sobre un dominio muy específico (reglamentos y procesos de matrícula). Diseñar el pipeline de chunking, embeddings y recuperación fue clave para que el modelo respondiera con fundamento y sin inventar información.
+
+Como parte del proyecto realicé un **benchmark comparativo entre Sentence-BERT y LLMs** para la detección de intenciones, lo que permitió tomar decisiones técnicas basadas en datos sobre qué enfoque ofrecía mejor relación precisión/costo.
+
+## Outcome
+
+El chatbot llegó a producción como MVP atendiendo consultas reales de estudiantes por WhatsApp, resolviendo una parte significativa de las preguntas frecuentes de matrícula sin intervención humana. El proyecto demuestra una integración completa de IA generativa, búsqueda vectorial y un panel operativo, end-to-end.

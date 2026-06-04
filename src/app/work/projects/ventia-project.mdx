@@ -1,0 +1,50 @@
+---
+title: "VentIA – Plataforma SaaS Multitenant para E-commerce"
+publishedAt: "2026-02-15"
+summary: "Plataforma SaaS multitenant que centraliza la gestión de órdenes de e-commerce (Shopify) con CRM, automatización e IA generativa. Arquitectura fullstack con Next.js, FastAPI y Ruby on Rails."
+images:
+  - "/images/projects/ventia/hero.png"
+  - "/images/projects/ventia/conversacion.png"
+
+team:
+  - name: "Renzo Lenes"
+    role: "Head of Fullstack Development"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/renzo-alberto-lenes/"
+
+link: "https://ventia-latam.com"
+---
+
+## Overview
+
+**VentIA** es una plataforma SaaS B2B multitenant que centraliza la operación de e-commerce: gestión de órdenes de Shopify, CRM, atención multicanal por WhatsApp e Instagram, y automatización de procesos con IA generativa. Como **Head of Fullstack Development**, lidero la arquitectura y el desarrollo end-to-end del producto en un entorno startup de ritmo acelerado.
+
+El sistema está construido como un **monorepo** que orquesta tres servicios: un frontend en Next.js, un backend de aplicación en FastAPI y un servicio de mensajería en Ruby on Rails, todos aislados por tenant para garantizar la separación de datos entre clientes.
+
+## Key Features
+
+- **Arquitectura multitenant**: Aislamiento de datos por organización, con autenticación y autorización vía Auth0 y roles diferenciados (ADMIN, LOGÍSTICA, VENTAS, VIEWER).
+- **Integración con Shopify**: Sincronización de órdenes mediante la GraphQL Admin API, manteniendo el estado de pedidos actualizado en tiempo real.
+- **CRM y gestión de órdenes**: Panel centralizado para que los equipos de ventas y logística gestionen pedidos, clientes y conversaciones desde un solo lugar.
+- **IA generativa**: Capacidades de IA con la Gemini API integradas directamente en los flujos de negocio para asistir respuestas y automatizar tareas.
+- **Automatización con n8n**: Workflows que eliminan tareas manuales repetitivas, reduciendo tiempos de respuesta operativos hasta en un 60%.
+
+## Technologies Used
+
+- **Next.js 16 + React 19 + Tailwind CSS v4**: Frontend reactivo y de alto rendimiento.
+- **FastAPI + SQLAlchemy 2.0 + Alembic**: Backend de aplicación con migraciones versionadas sobre PostgreSQL 16.
+- **Ruby on Rails + Sidekiq**: Servicio de mensajería y procesamiento de jobs en background.
+- **Auth0**: Autenticación, autorización y gestión de sesiones multitenant.
+- **Shopify GraphQL Admin API**: Sincronización de órdenes y catálogo.
+- **Gemini API**: Capacidades de IA generativa en los flujos de negocio.
+- **Docker + pnpm workspaces**: Contenerización y gestión del monorepo.
+
+## Challenges and Learnings
+
+El mayor reto fue diseñar una arquitectura multitenant que garantizara aislamiento estricto de datos sin sacrificar la velocidad de desarrollo de nuevas features. Coordinar tres servicios en lenguajes distintos (Python, Ruby, TypeScript) dentro de un mismo monorepo exigió definir contratos de API claros y una estrategia de migraciones disciplinada.
+
+Liderar el desarrollo me llevó a equilibrar decisiones de arquitectura a largo plazo con la presión de iterar rápido junto a producto y negocio, traduciendo requerimientos en features concretas en cada ciclo.
+
+## Outcome
+
+VentIA opera en producción dando servicio a clientes reales de e-commerce, centralizando su operación de pedidos y atención. La plataforma demuestra una arquitectura escalable, segura y preparada para crecer con múltiples tenants simultáneos, combinando un stack moderno con IA aplicada al negocio.
